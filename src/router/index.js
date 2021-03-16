@@ -4,13 +4,14 @@ import {StyleSheet, Text, View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {AccountScreen, HomeScreen, OrderScreen, SplashScreen} from '../pages';
+import {ButtomNavigation} from '../component';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <ButtomNavigation {...props} />}>
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
       <Tab.Screen name="OrderScreen" component={OrderScreen} />
       <Tab.Screen name="AccountScreen" component={AccountScreen} />
